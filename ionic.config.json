@@ -1,0 +1,8 @@
+{
+  "name": "bankapp-v1-01",
+  "app_id": "0306e134",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
