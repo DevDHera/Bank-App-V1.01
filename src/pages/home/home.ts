@@ -1,14 +1,29 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, Slides } from 'ionic-angular';
+import {LoginPage} from '../login/login';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
+  @ViewChild(Slides) slides: Slides;
+  skipMsg: string = "Skip";
 
   constructor(public navCtrl: NavController) {
 
   }
+
+  skip() {
+    this.navCtrl.push(LoginPage);
+  }
+
+  slideChanged() {
+    if (this.slides.isEnd())
+      this.skipMsg = "Alright, I got it";
+    else
+      this.skipMsg="Skip";
+  }
+
 
 }

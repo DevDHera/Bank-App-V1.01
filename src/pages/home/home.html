@@ -1,18 +1,26 @@
 <ion-content>
-  <ion-slides pager>
+  <ion-slides pager effect='slide' (ionSlideDidChange)="slideChanged()">
     <ion-slide>
       <div class="diag" style="background: url('assets/imgs/warren-wong-346731116.jpg') no-repeat center center fixed; -webkit-background-size: cover; background-size: cover;">
         <ion-icon ios="ios-finger-print" md="md-finger-print" color="primary"></ion-icon>
+        <h2>App for the Rebels</h2>
       </div>
-      <div>
+      <!--<div>
+        <h2>App for the Rebels</h2>
+      </div>-->
+    </ion-slide>
+    <ion-slide>
+      <div class="diag" style="background: url('assets/imgs/warren-wong-346731116.jpg') no-repeat center center fixed; -webkit-background-size: cover; background-size: cover;">
+        <ion-icon ios="ios-finger-print" md="md-finger-print" color="primary"></ion-icon>
         <h2>App for the Rebels</h2>
       </div>
     </ion-slide>
     <ion-slide>
-      2
+      <div class="diag" style="background: url('assets/imgs/warren-wong-346731116.jpg') no-repeat center center fixed; -webkit-background-size: cover; background-size: cover;">
+        <ion-icon ios="ios-finger-print" md="md-finger-print" color="primary"></ion-icon>
+        <h2>App for the Rebels</h2>
+      </div>
     </ion-slide>
-    <ion-slide>
-      3
-    </ion-slide>
-  </ion-slides>  
+  </ion-slides>
+  <button (click)="skip()" id="skip">{{skipMsg}}</button>   
 </ion-content>
