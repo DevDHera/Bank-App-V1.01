@@ -28,10 +28,10 @@
   <ion-list>
     <ion-item-sliding *ngFor = "let item of customerNICs | async">
       <ion-item>
-        {{item.$value}}
+        {{item.value}}
       </ion-item>
       <ion-item-options slide = "right">
-        <button ion-button color ="danger" icon-only (click) = "removeNIC(item.$key)"><ion-icon name = "trash"></ion-icon></button> 
+        <button ion-button color ="danger" icon-only (click) = "removeNIC(item.key)"><ion-icon name = "trash"></ion-icon></button> 
       </ion-item-options>
     </ion-item-sliding>
   </ion-list>
