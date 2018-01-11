@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { FirebaseProvider } from '../../providers/firebase/firebase';
+import { FirebaseListObservable } from 'angularfire2/database';
 
 /**
  * Generated class for the LoginPage page.
@@ -15,7 +17,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  customerNICs: FirebaseListObservable<any[]>;
+  newNIC = '';
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public firebaseProvider: FirebaseProvider) {
+    this.customerNICs = this.firebaseProvider.getNIC();
+  }
+
+  addNIC() {
+    this.firebaseProvider.addNIC(this.newNIC);
+  }
+
+  removeNIC(id) {
+    this.firebaseProvider.removeNIC(id);
   }
 
   ionViewDidLoad() {
